@@ -61,7 +61,7 @@ class ImageScrapper(CrawlSpider):
 			productName = row[2]
 			pdURL = row[6]
 			if not pdURL:
-				pdURL = row[8]
+				pdURL = row[10]
 				
 			if not pdURL:
 				pdURL = row[12]

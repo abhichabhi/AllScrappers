@@ -48,7 +48,6 @@ class SpecificationScrapper(CrawlSpider):
 		brand = response.meta['brand']
 		snapDealMatch = response.meta['snapDealMatch']
 		amazonMatch = response.meta['amazonMatch']
-		print response.url
 		
 		
 		productJSON = {}
