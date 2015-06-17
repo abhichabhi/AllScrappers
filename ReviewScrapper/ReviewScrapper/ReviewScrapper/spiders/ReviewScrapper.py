@@ -39,8 +39,10 @@ class ReviewScrapper(CrawlSpider):
             print ulrList
             for url in ulrList:
                 if url:
-                    print url
-                    yield Request(url, meta={"brand":brand, "productName" : productName})#,meta={'db':db,'dbOperation':dbOperation,'cursor':cursor,'product_ecom':product_ecom})
+                    try:
+                        yield Request(url, meta={"brand":brand, "productName" : productName})#,meta={'db':db,'dbOperation':dbOperation,'cursor':cursor,'product_ecom':product_ecom})
+                    except:
+                        pass
     
             
     def parse(self,response):

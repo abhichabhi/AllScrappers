@@ -32,6 +32,7 @@ class ImageScrapper(CrawlSpider):
 		for items in AppProducts:
 			brand = items[0]
 			productName = items[1]
+			productName = productName.strip()
 			url = items[2]
 			outputFilePath = self.outputFilePath + productName + ".jpg"
 			if not os.path.isfile(outputFilePath) :

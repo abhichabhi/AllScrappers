@@ -2,7 +2,7 @@ from scrapy.selector import HtmlXPathSelector
 import urllib
 
 class FlipKartScrapper:
-	def downloadProductDetails(self,response, productName):
+	def downloadProductDetails(self,response, productName, brand):
 		hxs = HtmlXPathSelector(response)
 		specTableList = hxs.select("//table[@class='specTable']").extract()
 		AllProductSpecs = {}
@@ -30,6 +30,10 @@ class FlipKartScrapper:
 						if key and val:
 							if key[0] == "Model Name":
 								val = [productName]
+							if key[0] == "Brand":
+								val = [brand]
+							if key[0] == "brand":
+								val = [brand]
 							specSubDict[key[0]] = val[0].strip()
 					specSubCollection[specHead] = specSubDict
 					AllProductSpecsList.append(specSubCollection)

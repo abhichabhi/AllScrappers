@@ -55,7 +55,7 @@ class SpecificationScrapper(CrawlSpider):
 		
 		if ("flipkart" in response.url):
 			flipKartScrapper = FlipKartScrapper()
-			productJSON = flipKartScrapper.downloadProductDetails(response, productName)
+			productJSON = flipKartScrapper.downloadProductDetails(response, productName, brand)
 		if ("snapdeal" in response.url):
 			snapdealScrapper = SnapDealScrapper()
 			productJSON = snapdealScrapper.downloadProductDetails(response, productName, brand, snapDealMatch)
